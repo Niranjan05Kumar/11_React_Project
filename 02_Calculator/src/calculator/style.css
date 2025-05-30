@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    row-gap: 80px;
+    width: 100%;
+    width: auto;
+    background-color: rgb(8, 102, 134);
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.calculator {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+    max-width: 350px;
+}
+
+.calculator .display {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: #000000;
+    padding: 10px 15px;
+    text-align: right;
+}
+.calculator .display:focus{
+    outline: none;
+}
+
+.buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.buttons button:last-child {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.buttons button:hover {
+    background-color: orange;
+}
+
+.buttons .oparator {
+    color: orange;
+}
+
+.buttons .oparator:hover {
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+@media (max-width:400px) {
+    .container {
+        padding: 10vw 5vw;
+        row-gap: 40px;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 7vw;
+    }
+
+    .calculator {
+        width: 100%;
+        row-gap: 15px;
+    }
+
+    .calculator .display {
+        font-size: 12vw;
+        padding: 6px 15px;
+    }
+    .buttons{
+        gap: 2.5vw;
+    }
+    .buttons button {
+        height: fit-content;
+        font-size: 5.5vw;
+        font-weight: 900;
+        padding: 5vw 2vw;
+    }
+}
