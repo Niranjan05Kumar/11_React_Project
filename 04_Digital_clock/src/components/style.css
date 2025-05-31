@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+}
+
+.clock-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: clamp(1rem, 5vw, 4rem);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: min(500px, 90vw);
+}
+
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+}
+
+.weekdays span {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.weekdays span:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.weekdays span.active {
+    opacity: 1;
+    scale: 1.15;
+}
+
+.date {
+    margin: 1.5rem 0;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+#day,
+#month,
+#year {
+    display: inline-block;
+    min-width: 3rem;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.time {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    display: flex;
+    gap: 5px;
+}
+
+.colon {
+    animation: blink 1s infinite;
+}
+
+.period {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+    .time {
+        font-size: 2.5rem;
+    }
+
+    .weekdays span {
+        font-size: 0.8rem;
+    }
+
+    .period {
+        font-size: 1.2rem;
+    }
+
+    .date {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    #day,
+    #month,
+    #year {
+        min-width: 2.5rem;
+    }
+}
